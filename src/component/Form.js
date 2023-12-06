@@ -2,13 +2,10 @@ import "./Form.css";
 import { useState, useEffect } from "react";
 import Formcv from "./Formcv";
 import { useNavigate } from 'react-router-dom';
-import { createContext } from "react";
 
 
-
-export const globalInfo = createContext();
 const Form=(props) =>{
-  const myData = localStorage.getItem('myName');
+  
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name:"",
@@ -26,8 +23,23 @@ const Form=(props) =>{
     declare:""
   })
   
+  
   const handleSubmit=(e)=>{
     e.preventDefault();
+    localStorage.setItem('cvName', formData.name);
+    localStorage.setItem('cvState', formData.state);
+    localStorage.setItem('cvEmail', formData.email);
+    localStorage.setItem('cvPhone', formData.phone);
+    localStorage.setItem('cvLinkedin', formData.linkedin);
+    localStorage.setItem('cvPortfolio', formData.portfolio);
+    localStorage.setItem('cvCareer', formData.career);
+    localStorage.setItem('cvSecondary', formData.secondary);
+    localStorage.setItem('cvHigher', formData.higher);
+    localStorage.setItem('cvGraduation', formData.graduation);
+    localStorage.setItem('cvMaster', formData.master);
+    localStorage.setItem('cvSkills', formData.skills);
+    localStorage.setItem('cvDeclare', formData.declare);
+    // localStorage.setItem('formData', JSON.stringify(formData));
     navigate('/Formcv');
   }
   function handleInputChange(event){
@@ -35,6 +47,7 @@ const Form=(props) =>{
     setFormData(prev=>({
       ...prev,
       [name]:value
+      
       
     }))
     
@@ -46,9 +59,9 @@ const Form=(props) =>{
   
  
   return(
-    <globalInfo.Provider cvData={Formcv}>
+    
     <>
-    <Formcv/>
+    
     {/* <h1 style={{marginTop:"200px", textAlign:"center"}}>
       The Work is processing , please wait MR. {myData}<br/>
       here you will get your CV, thanks....
@@ -140,7 +153,7 @@ const Form=(props) =>{
 
 
     </>
-    </globalInfo.Provider>
+   
   )
 }
 export default Form;
