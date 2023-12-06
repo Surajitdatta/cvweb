@@ -15,7 +15,7 @@ const Formcv = (props) => {
     const master = localStorage.getItem('cvMaster');
     const skills = localStorage.getItem('cvSkills');
     const declare = localStorage.getItem('cvDeclare');
-    
+    //bye
   return (
     <div >
         <div style={{marginTop:"100px"}}>
