@@ -9,6 +9,7 @@ import Contact from './component/Contact';
 import Form from './component/Form';
 import Sign from './component/Sign';
 import SignIn from './component/SignIn';
+import Formcv from './component/Formcv';
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Contact" element={<Contact/>}/>
         <Route path="/Sign" element={<Sign/>}/>
         <Route path="/SignIn" element={<SignIn/>}/>
+        <Route path="/Formcv" element={<Formcv/>}  />
         
       </Routes>
     </BR>
