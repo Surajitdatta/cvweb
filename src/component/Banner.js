@@ -14,8 +14,8 @@ const Banner = () => {
                 <p>Our Voluntary Immersion Programme enables you to challenge yourself, experience another culture and develop an attitude of being grateful.</p>
                 <br/>
                 <p><b>Come and immerse yourself to change your world.</b></p>
-                <NavLink to="/Sign"><button className="btnn">SIGN-UP NOW</button></NavLink><br/>
-                <i>Already sign up? <NavLink to="/SignIn">Sign in</NavLink></i>
+                <NavLink to="/Sign"><button className="btnn" style={{width:"200px", whiteSpace:"nowrap"}}>SIGN-UP NOW</button></NavLink><br/>
+                {/* <i>Already sign up? <NavLink to="/SignIn">Sign in</NavLink></i> */}
             </div>
            
         </div>
