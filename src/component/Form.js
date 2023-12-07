@@ -17,9 +17,13 @@ const Form=(props) =>{
     career:"",
     secondary:"",
     higher:"",
+    // master1:"",
     graduation:"",
     master:"",
     skills:"",
+    project:"",
+    projectlink:"",
+    des:"",
     declare:""
   })
   
@@ -35,9 +39,13 @@ const Form=(props) =>{
     localStorage.setItem('cvCareer', formData.career);
     localStorage.setItem('cvSecondary', formData.secondary);
     localStorage.setItem('cvHigher', formData.higher);
+    // localStorage.setItem('cvMaster1', formData.master1);
     localStorage.setItem('cvGraduation', formData.graduation);
     localStorage.setItem('cvMaster', formData.master);
-    localStorage.setItem('cvSkills', formData.skills);
+    localStorage.setItem('cvProject', formData.project);
+    localStorage.setItem('cvProjectlink', formData.projectlink);
+    localStorage.setItem('cvDes', formData.des);
+    localStorage.setItem("cvSkills", formData.skills)
     localStorage.setItem('cvDeclare', formData.declare);
     // localStorage.setItem('formData', JSON.stringify(formData));
     navigate('/Formcv');
@@ -106,8 +114,10 @@ const Form=(props) =>{
                     </div>
 
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Graduation<span class="text-danger"> </span></label> <input type="text"  name="graduation" placeholder="Btech from x college with sgpa 8.0 " value={formData.graduation} onChange={handleInputChange}/> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Master Degree<span class="text-danger"> </span></label> <input type="text"  name="master" placeholder="Mtech from x college with sgpa 8.0" value={formData.master} onChange={handleInputChange}/> </div>
+                        {/* <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Graduation<span class="text-danger"> </span></label> <input type="text"  name="graduation" placeholder="Btech from x department with sgpa 8.0 " value={formData.graduation} onChange={handleInputChange}/> </div> */}
+                        {/* <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Master1 Degree<span class="text-danger"> </span></label> <input type="text"  name="master1" placeholder="Btech1 from x department with sgpa 8.0" value={formData.master1} onChange={handleInputChange}/> </div> */}
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"> Graduation<span class="text-danger"> *</span></label> <input type="text"  name="graduation" placeholder="Enter your grad" value={formData.graduation} onChange={handleInputChange} required/> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Master Degree<span class="text-danger"> </span></label> <input type="text"  name="master" placeholder="Mtech from x department with sgpa 8.0" value={formData.master} onChange={handleInputChange}/> </div>
                     </div>
 
                     <div class="row justify-content-between text-left">
@@ -115,8 +125,23 @@ const Form=(props) =>{
                     </div>
 
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Declaration<span class="text-danger"> *</span></label> <textarea  name="declare" placeholder="Career objective" value={formData.declare} onChange={handleInputChange}></textarea> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Academic Project name<span class="text-danger"> *</span></label> <input type="text"  name="project" placeholder="Enter your name" value={formData.project} onChange={handleInputChange} /> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Project link<span class="text-danger"> *</span></label> <input type="text"  name="projectlink" placeholder="Enter your project link" value={formData.projectlink} onChange={handleInputChange} /> </div>
+                        
                     </div>
+                    <div class="row justify-content-end">
+                    <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Project description<span class="text-danger"> *</span></label> <textarea type="text"  name="des" placeholder="Project description" value={formData.des} onChange={handleInputChange}/> </div>
+                    
+                        
+                        
+                    </div>
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Declaration<span class="text-danger"> *</span></label> <textarea  name="declare" placeholder="Declaration" value={formData.declare} onChange={handleInputChange}></textarea> </div>
+                    </div>
+
+
+                    
                     
                     <div class="row justify-content-end">
                         <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Submit</button> </div>

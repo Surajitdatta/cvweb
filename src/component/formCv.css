@@ -1,0 +1,119 @@
+.formCv{
+    height:fit-content;
+    width:35%;
+    border:5px solid gold;
+    
+    
+    margin:100px auto;
+}
+.vitae{
+    
+    font-family: emoji;
+    font-size:20px;
+    text-align:center;
+}
+.personal{
+   
+}
+.personal ul {
+    list-style:none;
+    
+    padding-left: 20px;
+
+}
+.personal ul li{
+    margin-bottom: -5px;
+}
+.personal li:first-child{
+    font-family:cursive;
+    font-size: larger;
+}
+.personal li:nth-child(2){
+    font-size: small;
+}
+.personal li:nth-child(3){
+    font-size: small;
+}
+.personal li:nth-child(4){
+    font-size: small;
+}
+.personal li:nth-child(5){
+    font-size: small;
+}
+.personal li:nth-child(6){
+    font-size: small;
+}
+.career{
+    margin-left:20px;
+    position:relative;
+    background:palevioletred;
+    width:90%;
+    color:white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.career::after{
+    content:"";
+    position:absolute;
+    height:1px;
+    width:90%;
+
+    /* background:grey; */
+    
+}
+.objective{
+    padding-left:20px;
+    line-height: 20px;
+    font-size:small;
+    margin-top:20px;
+    width:95%;
+}
+.academic{
+    margin-left:20px;
+    position:relative;
+    background:palevioletred;
+    width:90%;
+    color:white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.academic::after{
+    content:"";
+    position:absolute;
+    height:.5px;
+    width:90%;
+    
+
+}
+.qualification{
+   
+}
+.project {
+    padding-left: 20px;
+    
+}
+.projectlink{
+    padding-left: 20px;
+
+}
+.des{
+    padding-left: 20px;
+    width:95%;
+}
+@media (min-width: 0px) and (max-width: 768px){
+    .formCv{
+        height:fit-content;
+        width:100%;
+       
+        margin:100px auto;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .formCv{
+        height:fit-content;
+        width:60%;
+        
+        margin:100px auto;
+    }
+}

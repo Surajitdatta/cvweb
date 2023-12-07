@@ -8,7 +8,7 @@ import Sign from './Sign';
 const Template = (props) => {
   const navigate = useNavigate();
   const myData = localStorage.getItem('myName');
-  alert(myData)
+ 
   const validation=()=>{
     myData.length===0?navigate("/Sign"): navigate("/Form");
     
