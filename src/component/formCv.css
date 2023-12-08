@@ -3,7 +3,7 @@
     width:35%;
     border:5px solid gold;
     
-    
+    word-wrap: break-word;
     margin:100px auto;
 }
 .vitae{
@@ -66,7 +66,8 @@
     line-height: 20px;
     font-size:small;
     margin-top:20px;
-    width:95%;
+   
+    word-wrap: break-word;
 }
 .academic{
     margin-left:20px;
@@ -99,6 +100,7 @@
 .des{
     padding-left: 20px;
     width:95%;
+    word-wrap: break-word;
 }
 @media (min-width: 0px) and (max-width: 768px){
     .formCv{
