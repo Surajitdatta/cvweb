@@ -5,11 +5,17 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Sign from './Sign';
+import Expcv from './Expcv';
 const Template = (props) => {
   const navigate = useNavigate();
   const myData = localStorage.getItem('myName');
+ 
   const validation=()=>{
     myData.length===0?navigate("/Sign"): navigate("/Form");
+    
+  }
+  const validation1=()=>{
+    myData.length===0?navigate("/Sign"): navigate("/Expcv");
     
   }
  
@@ -32,7 +38,7 @@ const Template = (props) => {
           
           </div>
           <div className="cv">
-          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%" onClick={validation}/>
+          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%" onClick={validation1}/>
 
           </div>
           <div className="cv">

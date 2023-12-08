@@ -1,0 +1,32 @@
+.exp{
+    font-size: 16px;
+    
+    margin-left:20px;
+    padding-left:0px;
+    
+}
+.exp pre{
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+
+}
+.exp_formCv{
+    border-image: linear-gradient(#d684bd, #0a152c) 30;
+    border-width: 4px;
+    border-style: solid;
+    
+    color:white;
+    
+}
+.print{
+    background-color:rgb(8, 7, 44) !important;
+    color:white;
+    padding:20px;
+    
+}
+.expCareer{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+

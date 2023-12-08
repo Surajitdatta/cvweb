@@ -3,7 +3,9 @@ import { useState, useRef } from 'react';
 import ReactToPrint from 'react-to-print';
 import Button from 'react-bootstrap/Button';
 import "./formCv.css";
-const Formcv = (props) => {
+import "./Expformcv.css";
+import { Link } from 'react-router-dom';
+const Expformcv = (props) => {
     
     const name = localStorage.getItem('cvName');
     const state = localStorage.getItem('cvState');
@@ -20,21 +22,9 @@ const Formcv = (props) => {
     const declare = localStorage.getItem('cvDeclare');
     const project = localStorage.getItem('cvProject');
     const projectlink = localStorage.getItem('cvProjectlink');
+    const exp = localStorage.getItem('cvExp');
     const des = localStorage.getItem('cvDes');
-    //bye
-    // {name}<br/>
-    // {state}<br/>
-    // {email}<br/>
-    // {phone}<br/>
-    // {linkedin}<br/>
-    // {portfolio}<br/>
-    // {career}<br/>
-    // {secondary}<br/>
-    // {higher}<br/>
-    // {graduation}<br/>
-    // {master}<br/>
-    // {skills}<br/>
-    // {declare}<br/>
+    
     const myRef = useRef();
     const print =()=>{
       if (myRef && myRef.current) {
@@ -44,10 +34,10 @@ const Formcv = (props) => {
 
     }
   return (
-    <div className="formCv" >
-        <div  ref={myRef}>
+    <div className="formCv exp_formCv print-background"  >
+        <div  ref={myRef} className="print">
 
-          <div className="vitae">
+          <div className="vitae ">
             <h2><u>CURRICULUM VITAE</u></h2>
           </div>
 
@@ -57,21 +47,21 @@ const Formcv = (props) => {
               <li>{state}</li>
               <li>{email}</li>
               <li>{phone}</li>
-              <li><a href={portfolio}>{portfolio}</a></li>
+              <li><Link to={portfolio}>{portfolio}</Link></li>
               <li><a href={linkedin}>{linkedin}</a></li>
             </ul>
           </div>
 
-          <div className='career'>
+          <div className='career expCareer'>
             <h3>Career objective</h3>
 
           </div>
 
-          <div className='objective'>
+          <div className='objective ' >
             <p>{career}</p>
           </div>
 
-          <div className="academic">
+          <div className="academic expCareer">
             
             <h3>Academic Qualification</h3>
 
@@ -94,7 +84,7 @@ const Formcv = (props) => {
           </div>
 
 
-          <div className="academic">
+          <div className="academic expCareer">
             
             <h3>Academic project</h3>
 
@@ -123,12 +113,29 @@ const Formcv = (props) => {
             <p>{skills}</p>
           </div>
 
-          <div className="academic">
+
+          <div className="academic expCareer">
             
-            <h3>Declaration</h3>
+            <h3>Professional Experience</h3>
 
           </div>
-          <div className='objective'>
+          <div className='objective exp' >
+            <pre>
+            <p>{exp}</p>
+
+            </pre>
+            
+          </div>
+
+
+
+
+
+          <div className="academic expCareer">
+            <h3>Declaration</h3>
+          </div>
+
+          <div className='objective expDec'>
             <p>{declare}</p>
           </div>
 
@@ -158,4 +165,4 @@ const Formcv = (props) => {
   )
 }
 
-export default Formcv;
+export default Expformcv;

@@ -1,10 +1,11 @@
+
 import "./Form.css";
 import { useState, useEffect } from "react";
 import Formcv from "./Formcv";
 import { useNavigate } from 'react-router-dom';
+import Expformcv from "./Expformcv";
 
-
-const Form=(props) =>{
+const Expcv=(props) =>{
   
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -24,6 +25,7 @@ const Form=(props) =>{
     project:"",
     projectlink:"",
     des:"",
+    exp:"",
     declare:""
   })
   
@@ -45,10 +47,12 @@ const Form=(props) =>{
     localStorage.setItem('cvProject', formData.project);
     localStorage.setItem('cvProjectlink', formData.projectlink);
     localStorage.setItem('cvDes', formData.des);
-    localStorage.setItem("cvSkills", formData.skills)
+    localStorage.setItem("cvSkills", formData.skills);
+    localStorage.setItem("cvExp", formData.exp);
+
     localStorage.setItem('cvDeclare', formData.declare);
     // localStorage.setItem('formData', JSON.stringify(formData));
-    navigate('/Formcv');
+    navigate('/Expformcv');
   }
   function handleInputChange(event){
     const {name, value}=event.target;
@@ -90,7 +94,7 @@ const Form=(props) =>{
 
 
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"> Name<span class="text-danger"> *</span></label> <input type="text"  name="name" placeholder="Enter your name" value={formData.name} onChange={handleInputChange} required/> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"> Name<span class="text-danger"> *</span></label> <input type="text"  name="name" placeholder="Enter your name" value={formData.name} onChange={handleInputChange} /> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">State<span class="text-danger"> *</span></label> <input type="text"  name="state" placeholder="Enter your state" value={formData.state} onChange={handleInputChange}/> </div>
                     </div>
                     
@@ -116,7 +120,7 @@ const Form=(props) =>{
                     <div class="row justify-content-between text-left">
                         {/* <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Graduation<span class="text-danger"> </span></label> <input type="text"  name="graduation" placeholder="Btech from x department with sgpa 8.0 " value={formData.graduation} onChange={handleInputChange}/> </div> */}
                         {/* <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Master1 Degree<span class="text-danger"> </span></label> <input type="text"  name="master1" placeholder="Btech1 from x department with sgpa 8.0" value={formData.master1} onChange={handleInputChange}/> </div> */}
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"> Graduation<span class="text-danger"> *</span></label> <input type="text"  name="graduation" placeholder="Enter your grad" value={formData.graduation} onChange={handleInputChange} required/> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"> Graduation<span class="text-danger"> *</span></label> <input type="text"  name="graduation" placeholder="Enter your grad" value={formData.graduation} onChange={handleInputChange}/> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Master Degree<span class="text-danger"> </span></label> <input type="text"  name="master" placeholder="Mtech from x department with sgpa 8.0" value={formData.master} onChange={handleInputChange}/> </div>
                     </div>
 
@@ -126,14 +130,15 @@ const Form=(props) =>{
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Academic Project name<span class="text-danger"> *</span></label> <input type="text"  name="project" placeholder="Enter your name" value={formData.project} onChange={handleInputChange} /> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Project link<span class="text-danger"> *</span></label> <input type="text"  name="projectlink" placeholder="Enter your project link" value={formData.projectlink} onChange={handleInputChange} /> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Project link<span class="text-danger"> *</span></label> <input type="url"  name="projectlink" placeholder="Enter your project link" value={formData.projectlink} onChange={handleInputChange} /> </div>
                         
                     </div>
                     <div class="row justify-content-end">
                     <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Project description<span class="text-danger"> *</span></label> <textarea type="text"  name="des" placeholder="Project description" value={formData.des} onChange={handleInputChange}/> </div>
-                    
-                        
-                        
+                    </div>
+
+                    <div class="row justify-content-end">
+                    <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Professional experience<span class="text-danger"> *</span></label> <textarea type="text"  name="exp" placeholder="Professional experience" value={formData.exp} onChange={handleInputChange}/> </div>
                     </div>
 
                     <div class="row justify-content-between text-left">
@@ -181,4 +186,4 @@ const Form=(props) =>{
    
   )
 }
-export default Form;
+export default Expcv;

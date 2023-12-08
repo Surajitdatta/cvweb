@@ -10,6 +10,8 @@ import Form from './component/Form';
 import Sign from './component/Sign';
 import SignIn from './component/SignIn';
 import Formcv from './component/Formcv';
+import Expcv from './component/Expcv';
+import Expformcv from './component/Expformcv';
 function App() {
   return (
     <>
@@ -25,6 +27,9 @@ function App() {
         <Route path="/Sign" element={<Sign/>}/>
         <Route path="/SignIn" element={<SignIn/>}/>
         <Route path="/Formcv" element={<Formcv/>}  />
+        <Route path="/Expcv" element={<Expcv/>}/>
+        <Route path="/Expformcv" element={<Expformcv/>}/>
+
         
       </Routes>
     </BR>
