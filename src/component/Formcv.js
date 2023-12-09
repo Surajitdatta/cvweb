@@ -1,17 +1,11 @@
 import React from 'react'
-import { globalInfo } from './Form';
-import { useContext } from 'react';
-const Formcv = () => {
-    const Formcv = useContext(globalInfo);
-    console.log(Formcv)
-  return (
-    <div>
-        {Formcv.name}
-        
-        
+import { useLocation } from 'react-router-dom'
 
-    </div>
-  )
+const Formcv = () => {
+  const location = useLocation()
+  const formData = location.state.formData
+  console.log(formData)
+  return <div>{formData.name}</div>
 }
 
-export default Formcv;
+export default Formcv
